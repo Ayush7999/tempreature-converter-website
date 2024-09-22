@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Ayush Personal Portfolio Template  || Web Addicted </title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <boby>
+        <div class ="temp_container">
+            <div class="header">
+                <span class="heading">Temperture converter</span>
+                <span class="icon"><i class="fa-solid fa-temperature-three-quarters"></i></span>
+            </div>
+            <div class="text_symbol">
+                <span>&#8451 &#8457</span>
+                <span class="temp_icon"><i class="fa-solid fa-cloud-sun-rain"></i></span>
+
+             </div>
+             <div class="input_temperature">
+                <div class="celsius">
+                    <span class ="text_celsius">Celsius &#8451</span>
+                    <input type="number" value="0" id="celsius">
+                </div>
+                <div class="fahrenheit">
+                    <span class="text_fahrenheit">Fahrenheit &#8457</span>
+                    <input type ="number" value="32" id="fahrenheit">
+                </div>
+             </div>
+        </div>
+    </boby>
+    <script>
+        var celsius =document.getElementById("celsius");
+        var fahrenheit =document.getElementById("fahrenheit");
+
+        celsius.addEventListener('input', function(){
+            let cel = this.value;
+            let fah = (cel * 9/5) + 32; //applying formula 
+            if (!Number.isInteger(cel)){
+                fah = fah.toFixed(4);
+             }
+             fahrenheit.value =fah;
+        });
+        fahrenheit.addEventListener('input', function(){
+            let fah = this.value;
+            let cel = (fah-32) * 5/9;
+            if (!Number.isInteger(cel)){
+                cel =cel.toFixed(4);
+            }
+            celsius.value = cel;
+        });
+        
+    </script>
+    </html>
